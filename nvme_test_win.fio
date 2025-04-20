@@ -9,13 +9,14 @@ iodepth=32
 numjobs=1
 create_on_open=0
 unlink=0
-filename="C:/Tools/Hardware_Testing/fio/Kioxia/fio_test_file.dat"
 size=1G
 thread=1
 
 
-[randread]
+[job_randread]
 rw=randread
+filename=C:\Tools\Hardware_Testing\fio\Kioxia\fio\fio_test_file_read.dat
 
-[randwrite]
+[job_randwrite]
 rw=randwrite
+filename=C:\Tools\Hardware_Testing\fio\Kioxia\fio\fio_test_file_write.dat
