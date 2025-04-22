@@ -2,7 +2,7 @@ import subprocess
 import json
 import datetime
 
-FIO_CONFIG = "nvme_test_win.fio" # nvme_test.fio Linux | nvme_test_win.fio 
+FIO_CONFIG = "nvme_test_win.fio" # nvme_test_linux.fio Linux | nvme_test_win.fio Windows
 FIO_OUTPUT = "fio_output.json"
 LOG_FILE = "fio_summary_log.txt"
 
@@ -66,7 +66,7 @@ def main():
         print(f"Job: {r['job']}")
         print(f"  Read : {r['read_iops']} IOPS | {r['read_bw_MBps']} MB/s | {r['read_lat_us']} µs latency")
         print(f"  Write: {r['write_iops']} IOPS | {r['write_bw_MBps']} MB/s | {r['write_lat_us']} µs latency")
-        print("-" * 40)
+        print("-" * 60)
 
     log_summary(results)
 
