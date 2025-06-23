@@ -1,0 +1,12 @@
+asgiref==3.7.2
+colorama==0.4.6
+Django==5.0.2
+iniconfig==2.0.0
+packaging==23.2
+pluggy==1.4.0
+PyQt6==6.8.0
+PyQt6-Qt6==6.8.1
+PyQt6_sip==13.9.1
+pytest==8.0.1
+sqlparse==0.4.4
+tzdata==2024.1
