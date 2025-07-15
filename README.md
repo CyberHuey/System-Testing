@@ -19,7 +19,7 @@ Key goals:
 ## ⚙️ Features
 
 - ✅ Modular Python test scripts with CLI interface  
-- ✅ Telemetry checks: temperature, voltage, frequency  
+- ✅ Telemetry checks: Raw block devices, filesystem preformance, network storage, custom I/O engines 
 - ✅ JSON-based logging of test results  
 - ✅ Jenkins-compatible structure for pipeline execution  
 - ✅ Utility functions for statistical analysis using NumPy/Pandas  
@@ -37,17 +37,7 @@ Key goals:
 
 ## 📂 Project Structure
 
-(img/Simple_Fio-test.png)
-System-Testing/
-│
-├── test_runner.py # Main entry point
-├── hardware_tests/ # Contains CPU/memory/power test scripts
-├── lib/ # Utility functions and log formatter
-├── config/ # Test config and thresholds
-├── logs/ # JSON test result output
-└── README.md
-
-
+![FIO Test Diagram](img/Simple_Fio-test.png)
 ---
 
 ## 🚀 Getting Started
@@ -57,9 +47,15 @@ System-Testing/
 - Install dependencies:
 pip install -r requirements.txt
 
+## Configure
+Configure .fio to specify test and target device
+- Change filename path to whatever target devive being tested
+  - filename= "Target device"
 
 ### Run a test
-python3 test_runner.py --target cpu --duration 60
+(Basic test) python fiotest.py
+
+(Advance test with visual data) python fio_analysis_tool.py
 
 
 ### View logs
@@ -69,7 +65,14 @@ Logs are saved as JSON in `/logs` and can be parsed for dashboards or trend anal
 
 ## 📈 Sample Output
 
-![Sample output](https://github.com/CyberHuey/System-Testing/assets/sample_output.png)
+Running fio with config: nvme_test_win.fio
+
+FIO Test Summary:
+----------------
+Job: job_randread
+  Read : 6073 IOPS | 23.72 MB/s | 5186.63 µs latency
+  Write: 24758 IOPS | 96.71 MB/s | 1267.84 µs latency
+------------------------------------------------------------
 
 ---
 
@@ -77,7 +80,7 @@ Logs are saved as JSON in `/logs` and can be parsed for dashboards or trend anal
 
 This project showcases:
 - Hands-on experience with Python test automation
-- Real-world validation logic (CPU, memory, temperature, voltage)
+- Real-world validation logic 
 - Use of statistical libraries for performance tracking
 - CI pipeline readiness and modular structure
 
