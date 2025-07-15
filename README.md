@@ -37,6 +37,7 @@ Key goals:
 
 ## 📂 Project Structure
 
+(img/Simple_Fio-test.png)
 System-Testing/
 │
 ├── test_runner.py # Main entry point
